@@ -1,4 +1,6 @@
 
+import { propTypes } from "prop-types";
+
 function PokemonCard ({ name, imgSrc }) {
 
   return ( 
