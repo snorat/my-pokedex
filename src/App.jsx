@@ -1,6 +1,6 @@
 import PokemonCard from "./components/PokemonCard";
 import React, { useState } from 'react';
-import { propTypes } from "prop-types";
+
 
 const pokemonList = [
   {
@@ -49,8 +49,8 @@ const pokemonList = [
       <div>
         <button onClick={handlePreviousClick}> Previous </button>
         <button onClick={handleNextClick}>Next </button>
-  
-        <PokemonCard name={pokemonList[pokemonIndex].name} imgSrc={pokemonList[pokemonIndex].imgSrc} />
+
+        <PokemonCard {...pokemonList[pokemonIndex]} />
       </div>
     );
   }
