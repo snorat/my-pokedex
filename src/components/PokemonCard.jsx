@@ -1,5 +1,6 @@
 import { PropTypes } from "prop-types";
 
+
 function PokemonCard ({ name, imgSrc }) {
 
   return ( 
@@ -12,7 +13,7 @@ function PokemonCard ({ name, imgSrc }) {
   <img src={imgSrc} alt={name} />
   <h1>{name}</h1>
   </>
-
+ 
   )
 }
   PokemonCard.propTypes = {
