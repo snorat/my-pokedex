@@ -33,7 +33,8 @@ const pokemonList = [
   function App() {
 
     useEffect(
-      () => {
+      () => { 
+        if (pokemonList.name === "pikachu")
         console.log("hello pokemon trainer :)");
         alert("hello pokemon trainer :)")
       },
@@ -43,23 +44,16 @@ const pokemonList = [
 
     const [pokemonIndex, setPokemonIndex] = useState(0);
     
+  
     const handleNextClick = () => {
-      if (pokemonIndex < pokemonList.length - 1) {
-            const nextPokemon = pokemonList[pokemonIndex + 1].name;
-            setPokemonIndex(pokemonIndex + 1);
-            if (nextPokemon === "pikachu") {
-              alert("pika pikachu !!!");
-            }
+       if (pokemonIndex < pokemonList.length  - 1) {
+          setPokemonIndex(pokemonIndex + 1);
       }
     };
   
     const handlePreviousClick = () => {
       if (pokemonIndex > 0) {
-            const previousPokemon = pokemonList[pokemonIndex - 1].name;
-            setPokemonIndex(pokemonIndex - 1);
-            if (previousPokemon === "pikachu") {
-              alert("pika pikachu !!!");
-        }
+        setPokemonIndex(pokemonIndex - 1);
       }
     };
 
@@ -71,9 +65,6 @@ const pokemonList = [
     //   },
     //   []
     // );
-
- 
-
   
     return (
 

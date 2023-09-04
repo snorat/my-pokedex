@@ -1,4 +1,6 @@
+
 function NavBar({handleNextClick, handlePreviousClick}) {
+
 
     return (
 
@@ -23,3 +25,4 @@ function NavBar({handleNextClick, handlePreviousClick}) {
 // }
 
 export default NavBar;
+
