@@ -2,6 +2,7 @@ import PokemonCard from "./components/PokemonCard";
 import React, { useState } from 'react';
 import NavBar from "./components/NavBar";
 import { useEffect } from "react";
+import "./App.css"
 
 
 const pokemonList = [
@@ -40,53 +41,22 @@ const pokemonList = [
       []
     );
 
-
     const [pokemonIndex, setPokemonIndex] = useState(0);
+
+    const handleClick = (index) => { setPokemonIndex(index);
+      if (pokemonList[index].name === 'pikachu')
+      {alert('pika pikachu !!!');} }
     
-    const handleNextClick = () => {
-      if (pokemonIndex < pokemonList.length - 1) {
-            const nextPokemon = pokemonList[pokemonIndex + 1].name;
-            setPokemonIndex(pokemonIndex + 1);
-            if (nextPokemon === "pikachu") {
-              alert("pika pikachu !!!");
-            }
-      }
-    };
-  
-    const handlePreviousClick = () => {
-      if (pokemonIndex > 0) {
-            const previousPokemon = pokemonList[pokemonIndex - 1].name;
-            setPokemonIndex(pokemonIndex - 1);
-            if (previousPokemon === "pikachu") {
-              alert("pika pikachu !!!");
-        }
-      }
-    };
-
-    // useEffect(
-    //   () => {
-    //       if name.PokemonCard === 
-    //     console.log("pika pikachu !!!");
-    //     alert("pika pikachu !!!")
-    //   },
-    //   []
-    // );
-
- 
-
-  
     return (
 
-
       <div>
-        <NavBar handleNextClick={handleNextClick} handlePreviousClick={handlePreviousClick} />
         <PokemonCard {...pokemonList[pokemonIndex]} />
-        {/* <NavBar actions= {{next:handleNextClick, previous:handlePreviousClick}} /> */}
+        <NavBar pokemonList={pokemonList} handleClick={handleClick}/>
+
       </div>
     );
   }
-  
 
-  export default App;
 
+export default App;
 
